@@ -1,0 +1,114 @@
+.eneon {
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+/* #bg-video:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-clip-path: polygon(0 0, 50% 0, 37% 100%, 0 100%);
+  clip-path: polygon(0 0, 53% 0, 41% 100%, 0 100%);
+  background: rgba(198, 100, 255, 0.733);
+} */
+
+/* h1 {
+    font-size: 4.2rem;    
+  } */
+
+/* Flickering animation */
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.692),
+      0 0 11px rgba(255, 255, 255, 0.692), 0 0 19px rgba(255, 255, 255, 0.692),
+      0 0 20px rgba(228, 119, 250, 0.678), 0 0 20px rgba(228, 119, 250, 0.678),
+      0 0 20px rgba(228, 119, 250, 0.678), 0 0 30px rgba(228, 119, 250, 0.678),
+      0 0 50px rgba(228, 119, 250, 0.678);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes flicker-2 {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.692),
+      0 0 11px rgba(255, 255, 255, 0.692), 0 0 19px rgba(255, 255, 255, 0.692),
+      0 0 20px rgba(0, 255, 170, 0.596), 0 0 20px rgba(0, 255, 170, 0.596),
+      0 0 20px rgba(0, 255, 170, 0.596), 0 0 20px rgba(0, 255, 170, 0.596),
+      0 0 50px rgba(0, 255, 170, 0.596);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+.eneon-3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  animation: flicker-2 1.5s infinite alternate;
+  color: #fff;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* Additional styling
+    
+  h2 {
+   font-size: 1.8rem;
+  }
+  .container {
+    margin-top: 20vh;
+  } */
+
+/* body {
+    font-size: 18px;
+    font-family: "Helvetica Neue", sans-serif;
+    background-color: #010a01;
+  }   */
+
+/* h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+  } */
+
+.form-cont input {
+  font-size: 0.85rem !important;
+  color: white !important;
+  border-radius: 2px !important;
+  border: none !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(157, 81, 192, 0.849) !important;
+  outline: none !important;
+}
+
+.form-cont label {
+  font-family: inherit !important;
+  font-weight: 400 !important;
+  color: #9ca9b3 !important;
+}
+
+.form-cont input:focus {
+  outline-width: 0 !important;
+}
