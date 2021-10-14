@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import {Link} from "react-router-dom";
+import axios from "axios";
 import img from "../assets/images/Hackathon.jpg";
 import Guidelines from "../components/sections/Guidelines";
 import { HeroContent, Addons, HeroSec } from "./FastLineFollowers";
@@ -198,8 +198,23 @@ export default function Esports() {
           </Guidelines>
 
           <div>
-            <Link
-              to="../assets/hackathon.docx"
+          <button
+              onClick={async () => {
+                axios({
+                  url: "https://polar-woodland-86934.herokuapp.com/api/getFile/hackathon.docx", //your url
+                  method: "GET",
+                  responseType: "blob", // important
+                }).then((response) => {
+                  const url = window.URL.createObjectURL(
+                    new Blob([response.data])
+                  );
+                  const link = document.createElement("a");
+                  link.href = url;
+                  link.setAttribute("download", "Hackathon Rules.docx"); //or any other extension
+                  document.body.appendChild(link);
+                  link.click();
+                });
+              }}
               class="ui Link"
               type="submit"
               style={{
@@ -211,18 +226,17 @@ export default function Esports() {
                 letterSpacing: "2px",
                 textTransform: "uppercase",
                 fontWeight: "bold",
+                cursor: "pointer"
               }}
-              target="_blank"
-              download
             >
               Download
-            </Link>
+            </button>
           </div>
 
           <div
             style={{
               width: "40%",
-              marginBottom: '3rem',
+              marginTop: '3rem',
               height: "6rem",
               border: "1px solid rgba(99, 181, 190, 0.82)",
               textAlign: "center",

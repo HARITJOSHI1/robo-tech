@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Guidelines from "../components/sections/Guidelines";
-import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Esports.css";
 
 export default function Esports() {
@@ -214,33 +214,33 @@ export default function Esports() {
         <Guidelines split width="74%">
           <h4> Game Rules for this tournament: </h4>
           <ul>
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
+            <li style={{ color: "white", fontSize: ".8rem" }}>
               Each team must at least have a min. of 5 players and a max. of 6
               players which mean 1 substitute.
             </li>
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
+            <li style={{ color: "white", fontSize: ".8rem" }}>
               Once the tournament has started, you cannot replace any players.
             </li>
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
+            <li style={{ color: "white", fontSize: ".8rem" }}>
               A substitute player may only be added before the tournament
               starts. This player cannot be part of any other team’s roster
               which is participating or has participated in the same tournament.
             </li>
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
+            <li style={{ color: "white", fontSize: ".8rem" }}>
               Using a player not in the roster would be disqualified immediately
               as that is considered as cheating.
             </li>
 
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
+            <li style={{ color: "white", fontSize: ".8rem" }}>
               Match has to be played in the following format: 5v5.
             </li>
 
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
+            <li style={{ color: "white", fontSize: ".8rem" }}>
               A player is allowed to represent only one (1) team’s roster in the
               same tournament
             </li>
 
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
+            <li style={{ color: "white", fontSize: ".8rem" }}>
               Every player of the team must join the discord server of
               Primordial E&G Club i.e.{" "}
               <a
@@ -251,12 +251,12 @@ export default function Esports() {
               </a>
             </li>
 
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
+            <li style={{ color: "white", fontSize: ".8rem" }}>
               For more information hit on the download button below.
             </li>
 
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
-              Link for the youtube channel {" "}
+            <li style={{ color: "white", fontSize: ".8rem" }}>
+              Link for the youtube channel{" "}
               <a
                 href="https://www.youtube.com/channel/UCL7D02OxBFphu0sqSIVYUHA"
                 style={{ color: "#121921" }}
@@ -265,15 +265,30 @@ export default function Esports() {
               </a>
             </li>
 
-            <li style={{ color: "white",  fontSize: '.8rem'}}>
+            <li style={{ color: "white", fontSize: ".8rem" }}>
               Total Prize Pool of the tournament is 6000 INR Winner: 3000INR
               Runner Up: 2000 INR 3rd : 1000INR
             </li>
           </ul>
         </Guidelines>
         <div>
-          <Link
-            to="../assets/Tournament Rules.docx"
+          <button
+            onClick={async () => {
+              axios({
+                url: "https://polar-woodland-86934.herokuapp.com/api/getFile/Tournament Rules.docx", //your url
+                method: "GET",
+                responseType: "blob", // important
+              }).then((response) => {
+                const url = window.URL.createObjectURL(
+                  new Blob([response.data])
+                );
+                const link = document.createElement("a");
+                link.href = url;
+                link.setAttribute("download", "Tournament Rules.docx"); //or any other extension
+                document.body.appendChild(link);
+                link.click();
+              });
+            }}
             class="ui Link"
             type="submit"
             style={{
@@ -285,12 +300,11 @@ export default function Esports() {
               letterSpacing: "2px",
               textTransform: "uppercase",
               fontWeight: "bold",
+              cursor: "pointer",
             }}
-            target="_blank"
-            download
           >
             Download
-          </Link>
+          </button>
         </div>
       </section>
     </div>

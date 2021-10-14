@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import {Link} from "react-router-dom";
+import axios from "axios";
 import img from "../assets/images/waterRocket.jpg";
 import Guidelines from "../components/sections/Guidelines";
 import { HeroContent, Addons, HeroSec } from "./FastLineFollowers";
@@ -195,8 +195,23 @@ export default function Esports() {
             </ul>
           </Guidelines>
           <div>
-            <Link
-              to="../assets/waterRocket rules.docx"
+            <button
+              onClick={async () => {
+                axios({
+                  url: "https://polar-woodland-86934.herokuapp.com/api/getFile/waterRocket rules.docx", //your url
+                  method: "GET",
+                  responseType: "blob", // important
+                }).then((response) => {
+                  const url = window.URL.createObjectURL(
+                    new Blob([response.data])
+                  );
+                  const link = document.createElement("a");
+                  link.href = url;
+                  link.setAttribute("download", "Water Rocket Rules.docx"); //or any other extension
+                  document.body.appendChild(link);
+                  link.click();
+                });
+              }}
               class="ui Link"
               type="submit"
               style={{
@@ -208,17 +223,17 @@ export default function Esports() {
                 letterSpacing: "2px",
                 textTransform: "uppercase",
                 fontWeight: "bold",
+                cursor: "pointer",
               }}
-              target="_blank"
-              download
             >
               Download
-            </Link>
+            </button>
           </div>
+
           <div
             style={{
               width: "40%",
-              marginBottom: '3rem',
+              marginTop: "3rem",
               height: "6rem",
               border: "1px solid rgba(134, 2, 82, 0.83)",
               textAlign: "center",

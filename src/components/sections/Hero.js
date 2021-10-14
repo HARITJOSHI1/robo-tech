@@ -128,7 +128,16 @@ const Hero = ({
             </h1>
             <div className="container-xs">
               <div className="reveal-from-bottom" data-reveal-delay="600">
-                <div style={{ fontSize: "1.3rem", fontWeight: "bold", color: "black", backgroundColor: "rgb(207, 190, 121)", width: '40%', margin: '1rem auto'}}>
+                <div
+                  style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "bold",
+                    color: "black",
+                    backgroundColor: "rgb(207, 190, 121)",
+                    width: "40%",
+                    margin: "1rem auto",
+                  }}
+                >
                   {" "}
                   29 - 30th October
                 </div>
@@ -165,7 +174,7 @@ const Hero = ({
             id="video-modal"
             show={videoModalActive}
             handleClose={closeModal}
-            video="https://player.vimeo.com/video/174002812"
+            video="https://www.youtube.com/embed/ouM2GcoemOY"
             videoTag="iframe"
           />
         </div>

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Styled, { css } from "styled-components";
 import img from "../assets/images/fastLine.jpg";
-import { Link } from "react-router-dom";
+import axios from "axios";
 import Guidelines from "../components/sections/Guidelines";
 import "./fl.css";
 
@@ -236,12 +236,26 @@ export default function Esports() {
               <li style={{ color: "white" }}>
                 Hit the download button to check out the rules for the event
               </li>
-              
             </ul>
           </Guidelines>
           <div>
-            <Link
-              to="../assets/flf rules.docx"
+            <button
+              onClick={async () => {
+                axios({
+                  url: "https://polar-woodland-86934.herokuapp.com/api/getFile/flf rules.docx", //your url
+                  method: "GET",
+                  responseType: "blob", // important
+                }).then((response) => {
+                  const url = window.URL.createObjectURL(
+                    new Blob([response.data])
+                  );
+                  const link = document.createElement("a");
+                  link.href = url;
+                  link.setAttribute("download", "Fastest Line Followers Rules.docx"); //or any other extension
+                  document.body.appendChild(link);
+                  link.click();
+                });
+              }}
               class="ui Link"
               type="submit"
               style={{
@@ -253,12 +267,11 @@ export default function Esports() {
                 letterSpacing: "2px",
                 textTransform: "uppercase",
                 fontWeight: "bold",
+                cursor: "pointer"
               }}
-              target="_blank"
-              download
             >
               Download
-            </Link>
+            </button>
           </div>
           <div
             style={{
