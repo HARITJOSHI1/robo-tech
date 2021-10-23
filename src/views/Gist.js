@@ -56,7 +56,7 @@ export default function Gist() {
             left: "4rem",
           }}
         >
-          <img src={require("../assets/images/summary.png")} alt="Summary" />
+          {/* <img src={require("../assets/images/summary.png")} alt="Summary" /> */}
         </div>
       </div>
       <Table />
