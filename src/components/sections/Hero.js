@@ -142,9 +142,9 @@ const Hero = ({
                   29 - 30th October
                 </div>
                 <ButtonGroup>
-                  <Timer
+                  {/* <Timer
                     time={{ seconds: 60, minutes: 60, hours: 24, days: 19 }}
-                  />
+                  /> */}
                 </ButtonGroup>
               </div>
             </div>

@@ -251,7 +251,10 @@ export default function Esports() {
                   );
                   const link = document.createElement("a");
                   link.href = url;
-                  link.setAttribute("download", "Fastest Line Followers Rules.docx"); //or any other extension
+                  link.setAttribute(
+                    "download",
+                    "Fastest Line Followers Rules.docx"
+                  ); //or any other extension
                   document.body.appendChild(link);
                   link.click();
                 });
@@ -267,12 +270,25 @@ export default function Esports() {
                 letterSpacing: "2px",
                 textTransform: "uppercase",
                 fontWeight: "bold",
-                cursor: "pointer"
+                cursor: "pointer",
               }}
             >
               Download
             </button>
           </div>
+
+          <div style={{ marginTop: "3rem" }}>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Opi_cYwTcHc"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+
           <div
             style={{
               width: "40%",
