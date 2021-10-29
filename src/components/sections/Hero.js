@@ -139,7 +139,7 @@ const Hero = ({
                   }}
                 >
                   {" "}
-                  29 - 30th October
+                  15th November
                 </div>
                 <ButtonGroup>
                   {/* <Timer
