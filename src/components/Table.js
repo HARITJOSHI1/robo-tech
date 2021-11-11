@@ -16,31 +16,23 @@ export default function Table() {
         <tbody style={{ fontSize: ".9rem" }}>
           <tr>
             <td>Fastline Followers</td>
-            <td>29th October</td>
+            <td>15th November</td>
             <td>10AM-4PM</td>
             <td>2-3</td>
             <td>1st = 3000, 2nd = 2000, 3rd = 1000</td>
           </tr>
           <tr>
             <td>Hackathon</td>
-            <td>29th October</td>
-            <td>10AM-4PM</td>
-            <td>4</td>
-            <td>1st = 3000, 2nd = 2000, 3rd = 1000</td>
-          </tr>
-          <tr>
-            <td>Water Rocket</td>
-            <td>30th October</td>
+            <td>15th November</td>
             <td>10AM-4PM</td>
             <td>2-4</td>
             <td>1st = 3000, 2nd = 2000, 3rd = 1000</td>
           </tr>
-
           <tr>
-            <td>Exposition Tournament (Finale)</td>
-            <td>30th October</td>
+            <td>Water Rocket</td>
+            <td>15th November</td>
             <td>10AM-4PM</td>
-            <td>5</td>
+            <td>2-4</td>
             <td>1st = 3000, 2nd = 2000, 3rd = 1000</td>
           </tr>
         </tbody>

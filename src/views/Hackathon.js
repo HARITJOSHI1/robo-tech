@@ -167,7 +167,7 @@ export default function Esports() {
                 />
               </svg>
               <span>Fee</span>
-              <span>500 Rs</span>
+              <span>300 Rs</span>
             </li>
           </ul>
 
@@ -257,6 +257,14 @@ export default function Esports() {
                 style={{ fontSize: ".8rem" }}
               >
                 https://bit.ly/robotech_hackathon
+              </a>
+
+              <span>Problem statements</span>
+              <a
+                href="https://bit.ly/2XZky3H"
+                style={{ fontSize: ".8rem"}}
+              >
+               https://bit.ly/2XZky3H
               </a>
             </div>
           </div>

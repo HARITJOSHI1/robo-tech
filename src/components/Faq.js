@@ -9,7 +9,7 @@ const Faq = () => {
     },
     {
       ques: "Who can participate in the event ?",
-      ans: "This event is open for all the IPEC college students starting from 2nd year and above.",
+      ans: "This event is open for all the IPEC or other college students starting from 2nd year and above.",
     },
     {
       ques: "How can I register myself for this event ?",
