@@ -106,7 +106,7 @@ export default function Esports() {
                 />
               </svg>
               <span>Minimum</span>
-              <span>0</span>
+              <span>2</span>
             </li>
 
             <li style={{ display: "flex", alignItems: "center" }}>
